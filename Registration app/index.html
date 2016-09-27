@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>Registration Page</title>  
+
+        <script src="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.min.js"></script>
+       <link rel="stylesheet" href="https://storage.googleapis.com/code.getmdl.io/1.0.6/material.indigo-pink.min.css">
+       <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+        <style>
+        
+            html, body {
+            height: 100%;
+          }
+
+            .Container1 {
+            background-color: antiquewhite;
+            height: 100%;
+            width: 100%;
+            display: table;
+          }
+          .Container2 {
+            vertical-align: middle;
+            display: table-cell;
+            height: 100%;
+          }
+          .myTable {
+            margin: 0 auto;
+          }
+            
+            label{
+
+            }
+        
+        </style>
+        
+    </head>
+    <body ng-controller="RegisterCtrl" ng-app="myApp">
+        <div class="container1">
+            <div class = container2>
+            <form name="myForm">
+            <table class="myTable">
+                <tr><td>
+                        <h3>Registration Form</h3>
+                        <h4> Personal Details</h4>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="text1" ng-model="$root.user.firstName" required>
+                           <label class="mdl-textfield__label" for="text1">First Name</label>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="text2" ng-model="$root.user.lastName" required>
+                           <label class="mdl-textfield__label" for="text2">Last Name</label>
+                        </div>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="text3" ng-model="$root.user.address" required>
+                           <label class="mdl-textfield__label" for="text3">Address</label>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="text4" ng-model="$root.user.city" required>
+                           <label class="mdl-textfield__label" for="text4">City</label>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="text" id="text5" ng-model="$root.user.state" required>
+                           <label class="mdl-textfield__label" for="text5">State</label>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                           <input class="mdl-textfield__input" type="number" id="text6" name="zip" ng-model="$root.user.zipcode" ng-minlength = "5" ng-maxlength = "5" required>
+                           <label class="mdl-textfield__label" for="text6">Zip Code</label>
+                            <span class="help-block" 
+                                ng-show="myForm.zip.$touched && 
+                                myForm.zip.$invalid">
+                                Valid Zip code is required
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+            
+                <tr>
+                    <td>
+                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                            <input class="mdl-textfield__input" type="number" id="text7" name="phone" ng-model="$root.user.phone" ng-minlength = "10" ng-maxlength = "10" required> 
+                            <label class="mdl-textfield__label" for="text7">Phone</label>
+                            <span class="help-block" 
+                                ng-show="myForm.phone.$touched && 
+                                myForm.phone.$invalid">
+                                Valid phone number is required
+                            </span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <button class="mdl-button mdl-button--raised mdl-button--colored" ng-disabled = "myForm.$invalid" ng-click="savePersonalDetails()">Submit</button>
+                    
+                    </td>
+                
+                </tr>
+
+                </table>
+                </form>
+                </div>
+        </div>
+    </body>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+        <script src= "controller.js"></script>
+</html>
